@@ -4,12 +4,29 @@
 
 
 int main( int argc, char * argv[]) {
-
-	char *s = argv[0];
-
-	int x = atoi(s);
-
-	printf("%d\n", x * 2);  // 32
+	for (int i = 1; i < argc; ++i) {
+        // printf("argv[%d]: %s\n", i, argv[i]);
+		if (strcmp(argv[i], "ih") == 0) {
+			printf("%s\n", "ih" );
+		}
+		else if (strcmp(argv[i], "it") == 0) {
+			printf("%s\n", "it" );
+		}
+		else if (strcmp(argv[i], "dh") == 0) {
+			printf("%s\n", "dh" );
+		}
+		else if (strcmp(argv[i], "f") == 0) {
+			printf("%s\n", "f" );
+		}
+		else if (strcmp(argv[i], "p") == 0) {
+			printf("%s\n", "p" );
+		}
+		else {
+			 printf("input invalid\n");
+		}
+		return 0;
+      
+    }
 }
 
 
