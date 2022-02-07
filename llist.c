@@ -80,26 +80,21 @@ int main( int argc, char * argv[]) {
 			int x = atoi(s);
 			struct node *n = node_alloc(x);
 			llist_insert_head(&head, n);
-			// printf("%s\n", "ih" );
 		}
 		else if (strcmp(argv[i], "it") == 0) {
 			char *s = argv[++i];
 			int x = atoi(s);
 			struct node *n = node_alloc(x);
 			llist_insert_tail(&head, n);
-			// printf("%s\n", "it" );
 		}
 		else if (strcmp(argv[i], "dh") == 0) {
 			llist_delete_head(&head);
-			// printf("%s\n", "dh" );
 		}
 		else if (strcmp(argv[i], "f") == 0) {
 			llist_free(&head);
-			// printf("%s\n", "f" );
 		}
 		else if (strcmp(argv[i], "p") == 0) {
 			llist_print(head);
-			// printf("%s\n", "p" );
 		}
 		else {
 			 printf("input invalid\n");
