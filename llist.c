@@ -39,7 +39,12 @@ void llist_insert_tail(struct node **head, struct node *n) {
 }
 // Get llist_print() in place. Maybe test it by allocating a quick node to your head pointer and passing it in.
 void llist_print(struct node *head) {
-	if (head != NULL) {
+	if (head == NULL) {
+		printf("[empty]");
+	}
+
+	
+	else if (head != NULL) {
 		printf(" %d ", head->value);
 		struct node *next_node = head->next;
 
@@ -52,7 +57,16 @@ void llist_print(struct node *head) {
 }
 
 void llist_free(struct node **head) {
+	struct node *active_node = *head;
+	struct node *next_node = active_node->next;
 
+	while (next_node != NULL) {
+		next_node = active_node->next;
+		free(active_node);
+		active_node = next_node;
+	}
+
+	*head = NULL;
 }
 // Write node_alloc() to allocate a node with a given value.
 struct node * node_alloc(int value) {
@@ -63,7 +77,7 @@ struct node * node_alloc(int value) {
 }
 // Write node_free() to free the node.
 void node_free(struct node *n) {
-
+	free(n);
 }
 
 
