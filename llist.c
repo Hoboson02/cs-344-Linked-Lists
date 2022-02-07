@@ -2,18 +2,6 @@
 
 // Write the command line parser first. Make sure you're getting the right numbers with the right commands. You can either parse the whole command into some structure first, or you can just run list commands as you process argv.
 
-// int malloc_this(user_input)
-// {
-//     int *p = malloc(sizeof(int) * 10);
-
-//     *p = user_input; //Setting 0th index to 12. Same as p[0] = 12
-
-//     printf("%p\n", p);
-//     printf("%p\n", (p + 1));
-
-//     free(p);
-    
-// }
 // Write llist_insert_head() and get it working.
 void llist_insert_head(struct node **head, struct node *n) {
     n -> next = *head;
