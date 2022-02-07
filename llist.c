@@ -26,6 +26,7 @@ struct node *llist_delete_head(struct node **head) {
 void llist_insert_tail(struct node **head, struct node *n) {
 	if (*head == NULL) {
 		*head = n;
+		return;
 	}
 
 	struct node *last = *head;
