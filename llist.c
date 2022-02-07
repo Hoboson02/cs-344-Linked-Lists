@@ -10,6 +10,17 @@ void llist_insert_head(struct node **head, struct node *n) {
 
 struct node *llist_delete_head(struct node **head) {
 
+	if (*head == NULL) {
+		return NULL;
+	}
+
+	else {
+		struct node *temp = *head;
+		*head = (*head)->next;
+		return temp;
+	}
+
+	
 }
 
 void llist_insert_tail(struct node **head, struct node *n) {
@@ -63,11 +74,11 @@ int main( int argc, char * argv[]) {
 			// printf("%s\n", "ih" );
 		}
 		else if (strcmp(argv[i], "it") == 0) {
-			// char *s = argv[++i];
-			// int x = atoi(s);
-			// struct node *n = node_alloc(x);
-			// llist_insert_tail(&head, n);
-			printf("%s\n", "it" );
+			char *s = argv[++i];
+			int x = atoi(s);
+			struct node *n = node_alloc(x);
+			llist_insert_tail(&head, n);
+			// printf("%s\n", "it" );
 		}
 		else if (strcmp(argv[i], "dh") == 0) {
 			llist_delete_head(&head);
