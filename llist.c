@@ -4,7 +4,7 @@
 
 // Write llist_insert_head() and get it working.
 void llist_insert_head(struct node **head, struct node *n) {
-    n -> next = *head;
+    n->next = *head;
     *head = n;
 }
 
@@ -27,6 +27,15 @@ void llist_insert_tail(struct node **head, struct node *n) {
 	if (*head == NULL) {
 		*head = n;
 	}
+
+	struct node *last = *head;
+	n->next = NULL;
+
+	while (last->next != NULL) {
+		last = last->next;
+	}
+	last->next = n; 
+	return;
 }
 // Get llist_print() in place. Maybe test it by allocating a quick node to your head pointer and passing it in.
 void llist_print(struct node *head) {
